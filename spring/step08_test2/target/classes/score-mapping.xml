@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.scoreMapper"><!-- 네임스페이스는 해당 블럭의 이름. -->
+	<!-- 물음표 자리에 #{변수명} : getter 설정 = get변수명() -->
+	<!-- parameterType="test01.GoodsVO" : sql문에서 사용할 데이터 -->
+	<!-- 파라미터타입은 지정된 함수에서 #{ id }로 된 값을 게터로 가져옴. -->
+	<!-- resultType="test01.GoodsVO" : 1. 리턴 자료형(객체 1개일때), 2 리스트 객채에 저장될 자료형(리스트일때 )
+	리턴을 int 를 원하면 int를 적어주면 됨.-->
+	<select id="list" resultType="bean.ScoreVO">
+		select * from score
+	</select>
+	<select id="getOne" parameterType="bean.ScoreVO"
+		resultType="bean.ScoreVO">
+		select * from score where studNo = #{studNo}
+	</select>
+	<insert id="insert" parameterType="bean.ScoreVO">
+		insert into score values(#{studNo},#{name},#{kor},#{eng},#{mat},#{tot},#{avg},sysdate)
+	</insert>
+	<delete id="delete" parameterType="bean.ScoreVO">
+	delete score where studNo =#{studNo}
+	</delete>
+	<update id="update" parameterType="bean.ScoreVO">
+		update score set kor=#{kor},eng=#{eng},
+		mat=#{mat},tot=#{tot},avg=#{avg} where studNo=#{studNo}
+	</update>
+
+</mapper>

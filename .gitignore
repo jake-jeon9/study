@@ -1,0 +1,6 @@
+/target/
+*.properties
+.classpath
+.metadata
+privateMemo.txt
+/referance/

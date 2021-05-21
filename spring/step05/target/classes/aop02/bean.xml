@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bena 객체 설정 -->
+	<bean id="woman" class="aop02.Woman"/><!-- 핵심 공통사항 -->
+	<bean id="man" class="aop02.Man"/><!-- 핵심 공통사항 -->
+	
+	<!-- adivce : 횡단(공통) 관심사항 -->
+	<bean id="myAdvice" class="aop02.MyAspect"/> <!-- 공통관심사항 -->
+	
+	<!-- advisor = advice + pointcut(핵심 관심사항) --><!-- 준비 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+	
+	<!-- 분리한 공통관심사와 핵심 관심사항을 묶어주는 역할 -->
+	<bean id="myAdvisor" class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+		<!-- 공통관심사항 등록 :위에 설정된 adivce를 등록한다. -->
+		<property name="advice" ref="myAdvice"/> <!-- 여기다가 공통관심사항 등록.. -->
+		<!-- 핵심관심사항 등록 : 동작시킬 함수를 등록한다. -->
+		<!-- execution(public * * (..)) : advice와 같은 패키지의 public이면서 리턴타입은 아무타입, 메소드명도 아무거나 -->
+		<property name="expression" value="execution(public * * (..))"/><!-- 핵심관심사항을 등록. -->
+		<!-- <property name="expression" value="execution(public * classwork(..))"/> -->
+		<!--  advice의 참조파일에 있는 어떤 함수라도 실행되어 있으면 가로채서 전달함.-->
+		
+	</bean>
+</beans>

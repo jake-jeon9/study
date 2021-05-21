@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 네임 스페이스를 이용한 방법 -->
+	<bean id="developer" class="sample9.Developer" p:dept="개발2팀" p:emp-ref="emp1"/>
+	<bean id="engineer" class="sample9.Engineer" p:dept="기술2팀" p:emp-ref="emp2"/>
+
+	<bean id="emp1" class="sample9.Emp" c:name="강호동" c:salary="15000000"/>
+	<bean id="emp2" class="sample9.Emp" c:name="강호동" c:salary="25000000"/>
+</beans>

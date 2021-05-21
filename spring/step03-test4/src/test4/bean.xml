@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<bean id="tes1" class="test4.SungjukImpl">
+	<property name="dto" ref="getScore"/>
+	
+	</bean>
+	
+	<bean id="getScore" class="test4.SungjukDTO">
+	<constructor-arg value="홍길동"/>
+	<constructor-arg value="97"/>
+	<constructor-arg value="100"/>
+	<constructor-arg value="95"/>
+	</bean>
+
+</beans>

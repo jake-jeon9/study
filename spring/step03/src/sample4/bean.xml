@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- AbstractTest test = AbstractTest.getInstance(); 동일-->
+<!--  목요일인 경우 : test = Thursday -->
+<!--  factory-method="(사용할 함수명)getInstance" : 객체 생성 함수 설정 -->
+ <bean id="test" class="sample4.AbstractTest" factory-method="getInstance"/>
+</beans>

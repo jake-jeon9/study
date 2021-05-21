@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- DateVo hong = new DateVo();  
+	hong.setName("홍길동")
+	hong.setBirth("1998-07-10");
+	 -->
+	<bean id="hong" class="sample5.DateVo">
+	<property name="name" value="홍길동"/>
+	<property name="birth" value="1998-07-10"/>
+	</bean>
+
+	<!-- DateVo kim = new DateVo(); 
+	kim.setName("김영희")
+	kim.setBirth("1998-08-20");
+	 -->
+	<bean id="kim" class="sample5.DateVo">
+	<property name="name" value="김영희"/>
+	<property name="birth" value="1998-08-20"/>
+	</bean>
+</beans>

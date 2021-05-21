@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- scope="singleton" : 빈 객체를 1개만 만들어서 사용 <= default 값임 생략가능. -->
+	<!-- scope="prototype" : 요청이 올 떄마다 bean 객체를 생성해서 줌 -->
+	
+	<!-- 
+	<bean id="userService" class="sample3.UserServiceImpl" scope="singleton"/>
+	 -->
+	<bean id="userService" class="sample3.UserServiceImpl" scope="prototype"/>
+
+	
+
+</beans>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+		
+		<bean id="goodsDAO" class="test02.GoodsDAO">
+			<property name="sqlSession" ref="sqlSession"/>
+		</bean>
+		
+		<bean id="goodsService" class="test02.GoodsServiceImpl">
+			<property name="goodsDAO" ref="goodsDAO"/>
+		</bean>
+		
+		<!-- DataSource 설정 : 커넥션풀 설정 -->
+		
+		<context:property-placeholder location="classpath:db.properties"/>
+		
+		<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}"/>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+		</bean>
+
+		<!--  spring 과 mybatis 연동 설정 -->
+		<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+			<property name="configLocation" value="classpath:mybatis-config2.xml"/>
+		</bean>
+		
+		<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg ref="sessionFactory"/>
+		</bean>
+		
+		<!-- transaction : 커밋하기 전까지 동작되어짐/-->
+		<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+		</bean>
+		
+		<!-- aop의 around 동작을 함 -->
+		<tx:annotation-driven transaction-manager="transactionManager"/>
+		
+		<!-- mybatis를 사용하면, sqlSessionFactory는 sqlSessionFactoryBuilder를 생성해서 사용한다. 
+		mybatis spring 연동모듈에서는 sqlSessionFactoryBean이 대신 사용된다.
+		-->
+		
+</beans>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/7-Servlet/PersonServlet" method="get">
+		<table border="1">
+			<tr>
+				<th>이름</th>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<input type="radio" name="gender" value="0" checked="checked">남
+					<input type="radio" name="gender" value="1">여
+				</td>
+			</tr>
+			<tr>
+				<th>취미</th>
+				<td>
+					<input type="checkbox" name="hobby" value="독서">독서
+					<input type="checkbox" name="hobby" value="영화">영화
+					<input type="checkbox" name="hobby" value="음악">음악
+					<input type="checkbox" name="hobby" value="게임">게임
+					<input type="checkbox" name="hobby" value="쇼핑">쇼핑
+				</td>
+			</tr>
+			<tr>
+				<th>색깔</th>
+				<td>
+					<select name="color" style="width: 100px;">
+						<option value="red">빨 강</option>
+						<option value="green">초 록</option>
+						<option value="blue">파 랑</option>
+						<option value="magenta">보 라</option>
+						<option value="cyan">하 늘</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>과목</th>
+				<td>
+					<select name="subject" style="width: 100px;" 
+							size="5" multiple="multiple">
+						<option value="JAVA">JAVA</option>
+						<option value="JSP">JSP</option>
+						<option value="Spring">Spring</option>
+						<option value="jQuery">jQuery</option>
+						<option value="Servlet">Servlet</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" value="SEND">
+					<input type="reset" value="CANCEL">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+
+

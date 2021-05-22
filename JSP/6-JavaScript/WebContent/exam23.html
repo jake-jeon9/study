@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function open1() {
+		// 새창(혹은 새 탭) 띄우기
+		window.open("open.html");		
+	}
+	function open2() {
+		// 클릭할 때마다 팝업창이 새로 열림
+		// window.open(HTML 파일명, 새창 이름, "새창에 대한 속성 설정");
+		window.open("open.html", "", "width=300, height=500," +
+				"scrollbars=yes, toolbar=yes, menubar=yes, status=yes, location=yes");
+	}
+	function open3(url) {
+		// 클릭할 때마다 팝업창이 새로 열림
+		// window.open(HTML 파일명, 새창 이름, "새창에 대한 속성 설정");
+		window.open(url, "mywin", "width=300, height=500," +
+				"scrollbars=no, toolbar=no, menubar=no, status=no, location=no");
+	}
+</script>
+</head>
+<body>
+	<h1>window 객체</h1>
+	<h3>open 메소드 확인</h3>
+	<div>
+		<!-- return false; => a태그 무효화 -->
+		<a href="https://www.ezenac.co.kr"  onclick="open1(); return ture;">새 창 열기</a><br>
+		<a href="#" onclick="open2(); return false;">팝업 창 열기(1)</a><br>
+		<a href="#" onclick="open3('http://www.naver.com'); return false;">팝업 창 열기(2-1)</a><br>
+		<a href="#" onclick="open3('http://www.daum.net'); return false;">팝업 창 열기(2-2)</a><br>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

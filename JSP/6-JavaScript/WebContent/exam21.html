@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var myarray1 = new Array("홍길동", "자바스크립트", "강사");
+	// var myarray1 = ["홍길동", "자바스크립트", "강사"];
+	document.write(myarray1[0] + "<br>")
+	document.write(myarray1[1] + "<br>")
+	document.write(myarray1[2] + "<br>")
+	
+	// 값 변경
+	myarray1[0] = "Hong Gildong";
+	myarray1[1] = "Javascript"
+	myarray1[2] = "Teacher"
+	myarray1[3] = "Student"
+	document.write(myarray1[0] + "<br>")
+	document.write(myarray1[1] + "<br>")
+	document.write(myarray1[2] + "<br>")
+	document.write(myarray1[3] + "<br>")
+	
+	// 빈 배열 사용
+	var myarray2 = [];
+	myarray2[0] = "Hong Gildong2";
+	myarray2[1] = "Javascript2"
+	myarray2[2] = "Teacher2"
+	
+	for(var i=0; i<myarray2.length; i++) {
+		document.write(myarray2[i] + "<br>")
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+

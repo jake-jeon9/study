@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function doSubmit() {
+		if ("") {
+			alert("문자열 데이터 있음");
+		} else {
+			alert("문자열 데이터 없음");
+		}
+		if (0) {
+			alert("정수 데이터 있음");
+		} else {
+			alert("정수 데이터 없음");
+		}
+	}
+</script>
+</head>
+<body onload="doSubmit()">
+	<h1>새로 열린 창</h1>
+	<div>
+		<!-- window.close() : 브라우저 창 닫기
+			 return false; => <a> 태그 무효화 
+		 -->
+		<a href="#" onclick="window.close(); return false;">창닫기</a>
+	</div>
+</body>
+</html>

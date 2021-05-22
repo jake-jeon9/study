@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// <input> 태그에 데이터가 있는 지 입력 검사
+	function doSubmit() {
+		// 폼 객체 (form 내장 객체 : <form> 태그 관리) 얻기 
+		var frm = document.form1;
+		
+		
+		/*// 데이터의 참과 거짓
+		if("") {
+			alert("문자열 데이터 있음");
+		} else {
+			alert("문자열 데이터 없음");
+		}
+		if(0) {
+			alert("정수 데이터 있음");
+		} else {
+			alert("정수 데이터 없음");
+		}*/
+		
+		// text 요소의 입력 여부 검사
+		//if(frm.user_name.value == "") 
+		if(!frm.user_name.value) {
+			alert("이름을 입력해 주세요");
+			frm.user_name.focus();
+			return false;   // 함수 강제 종료
+		}
+		
+		// 라디오 버튼의 입력여부 검사
+		if(!frm.gender[0].checked && !frm.gender[1].checked) {
+			alert("성별을 선택해 주세요.");
+			frm.gender[0].checked=true;
+			return false;  // 함수 강제 종료
+		}
+		
+		// select 요소에 대한 선택위치 검사
+		if(frm.job.selectedIndex < 1) {
+			alert("직업을 선택해 주세요.");
+			frm.job.focus();
+			return false;
+		}
+		
+		// checkbox의 선택 여부 검사, 반복문으로 처리
+		var chk = false;
+		for(var i=0; i<frm.hobby.length; i++) {
+			if(frm.hobby[i].checked) {
+				chk = true;
+				break;
+			}
+		}
+		if(!chk) {
+			alert("취미를 선택해 주세요.");
+			frm.hobby[0].focus();
+			return false;
+		}
+		
+		// 입력 확인하기
+		if(confirm("입력하신 내용이 맞습니까?")) {
+			frm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- return false; => submit 무효화 -->
+	<!-- action="파일명" : <form> 태그의 입력데이터를 사용할 파일 설정 -->
+	<form action="exam25.html" name="form1" onsubmit="doSubmit(); return false;">
+		<fieldset>
+			<legend>회원가입</legend>
+			
+			<label>이름</label>
+			<input type="text" name="user_name"><br>
+			
+			<label>성별</label>
+			<input type="radio" name="gender" value="M">남자
+			<input type="radio" name="gender" value="F">여자
+			<br>
+			
+			<label>직업</label>
+			<select name="job">
+				<option>--- 선택하세요 ---</option>
+				<option value="dev">프로그래머</option>
+				<option value="pub">퍼블리셔</option>
+			</select>
+			<br>
+			
+			<label>취미</label>
+			<input type="checkbox" value="축구" name="hobby">축구
+			<input type="checkbox" value="농구" name="hobby">농구
+			<input type="checkbox" value="야구" name="hobby">야구
+			<br>
+			
+			<input type="submit" name="button" value="제출">
+			<input type="reset" name="button2" value="리셋">
+		</fieldset>
+	</form>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function printTime() {
+		// 현재시간 읽어오기
+		var mydate = new Date();
+		var days = ["일","월","화","수","목","금","토"];
+		var yy = mydate.getFullYear();
+		var mm = mydate.getMonth() + 1;
+		var dd = mydate.getDate();
+		var hh = mydate.getHours();
+		var mi = mydate.getMinutes();
+		var ss = mydate.getSeconds();
+		// 요일수 : 해당주의 며칠째 날에 대한 데이터
+		var day = days[mydate.getDay()];
+		// 시간 완성
+		var result = yy + "-" + mm + "-" + dd + " " + day + "요일" 
+					+ hh + ":" + mi + ":" + ss;
+		// <h1> 태그에 시간 출력
+		document.getElementById("timer").innerHTML = result;
+	}
+	
+	function startTimer() {
+		// 정해진 시간마다 함수를 호출함
+		// setInterval(호출함수명, 시간(ms))
+		setInterval(printTime, 1000);
+	}
+</script>
+</head>
+<body onload="startTimer()">
+	<h1 id="timer"></h1>
+</body>
+</html>

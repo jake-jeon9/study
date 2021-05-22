@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function sum(x, y) {
+		return x+y;
+	}
+	function printResult() {
+		//alert("test");		
+		var result = sum(10, 50);
+		//alert(result);
+		var mytag = document.getElementById("question").innerHTML = result;
+		//alert(mytag);
+	//	mytag.innerHTML = result;
+		//alert("test1");
+	}
+</script>
+</head>
+<body>
+	<h1>10 + 50 = <span id="question">?</span></h1>
+	<input type="button" value="결과보기" onclick="printResult()">
+</body>
+</html>
+
+
+
+

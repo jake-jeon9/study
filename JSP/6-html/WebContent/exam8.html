@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>08-데이터 전송</title>
+</head>
+<body>
+	<!-- action="파일명" : 서버에 전달될 데이터를 사용할 파일 설정 -->
+	<form action="result.jsp" method="get">
+		<fieldset>
+			<legend>이름 입력하기</legend>
+			<div>
+				<label for="user_name">이름 : </label>
+				<input type="text" name="user_name" id="user_name">
+			</div>
+			<div>
+				<input type="submit" value="입력완료">
+				<input type="reset" value="다시작성">
+				<!-- <input type="button"> : 자바스크립트로 입력검사와 같은 작업을 하기위해서 -->
+				<input type="button" value="일반 버튼" onclick="자바스크립트명령어">
+				<!-- <input type="image"> : type="submit"과 같은 동작 -->
+				<input type="image" src="img/ok.png" alt="입력완료">
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
+

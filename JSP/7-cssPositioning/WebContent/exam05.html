@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 화면 초기화 */
+* { 
+	margin: 0; padding: 0
+}
+body {
+	font: 12px "Tahoma", "sans-serif";
+}
+li {
+	list-style: none;
+}
+div#wrap {
+	width: 800px;
+	margin: 0 auto;
+	background: silver;
+}
+div#header {
+	background: red;
+}
+div#container {
+	background: cyan;
+}
+/* div#container:after
+   => float 속성이 지정된 박스를 감싸고 있는 <div> 태그가 끝나기전을 
+	의미한다.
+ */
+div#container:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+div#nav {
+	float:left;
+	width: 180px;
+	background: lime;
+}
+div#content {
+	float: right;
+	width: 600px;
+	background: lime
+}
+div#footer {
+	margin-top: 30px;
+	background: green;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1>LOGO</h1>
+		<p>This website is...</p>
+	</div>
+	
+	<div id="container">
+		<div id="nav">
+			<h2>Navigation</h2>
+			<ul>
+				<li><a href="#">Menu 1</a></li>
+				<li><a href="#">Menu 2</a></li>
+				<li><a href="#">Menu 3</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<h2>Content Title</h2>
+			<p>삼성전자가 '갤럭시노트20'와 '갤럭시Z폴드'를 내세워 본격적인 하반기 스마트폰 시장 공략에 나선다.
+
+삼성전자는 이들 제품을 통해 올해 상반기 갤럭시S20 시리즈 부진을 털어내고, 특히 올 2분기 중국 화웨이에 뺏긴 스마트폰 시장 점유율 세계 1위 자리를 다시 찾아온다는 계획이다.
+
+앞서 삼성전자는 2분기 글로벌 스마트폰 시장에서 20% 점유율로 1위를 차지한 화웨이(20.2%)에 근소한 뒤졌다.
+
+노태문 삼성전자 무선사업부장(사장)은 5일 밤 온라인으로 진행된 '언팩 행사'에서 이들 제품의 성능에 대한 강한 자신감을 내비쳤다.
+
+올 상반기 예상치 못한 코로나19 사태가 지속되면서 다소 침체된 '모바일 환경'을 새로운 혁신으로 정면 돌파하겠다는 의지를 보인 것이다.
+
+특히 삼성전자는 강력한 성능과 차별화된 사용자 경험을 통해 '갤럭시 생태계'를 확장하고, 모바일 시장에서 새로운 기준점을 세우겠다는 전략이다.</p>
+		</div>
+	</div>
+	
+	<div id="footer">
+		<address>Seoul, Korea</address>
+	</div>
+</div>
+</body>
+</html>
+
+
+

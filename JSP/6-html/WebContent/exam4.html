@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>04-텍스트입력하기</title>
+</head>
+<body>
+	<!-- 입력 내용을 감싸기 위한 부분 -->
+	<form action="">
+		<!-- 입력 내용에 대한 그룹을 명시하는 부분 -->
+		<fieldset>
+			<!-- 그룹의 제목 -->
+			<legend>내용 입력하기</legend>
+			<!-- 입력 요소(태그) 배치 -->
+			<div>
+				<label>아 이 디</label>
+				<input type="text" name="user_id" id="user_id" maxlength="50">
+			</div>
+			<div>
+				<label>회원이름</label>
+				<input type="text" name="user_name" id="user_name" maxlength="20">
+			</div>
+			<div>
+				<label>비밀번호</label>
+				<input type="password" name="user_pw" id="user_pw" maxlength="20">
+			</div>
+			<div>
+				<label>자기소개</label>
+				<textarea name="memo" id="memo" maxlength="100"></textarea>
+			</div>
+			<div>
+				<label>숨겨진 항목</label>
+				<input type="hidden" name="data" id="data" value="숨겨진 데이터">
+			</div>
+			<div>
+				<input type="submit" value="전송">
+				<input type="reset" value="취소">
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

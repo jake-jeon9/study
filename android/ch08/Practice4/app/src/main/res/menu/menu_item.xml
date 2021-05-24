@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/getImage"
+        android:title="이미지 보기" />
+    <item
+        android:id="@+id/getVideo"
+        android:title="비디오 보기" />
+    <item
+        android:id="@+id/getText"
+        android:title="Text 보기" />
+</menu>

@@ -16,7 +16,7 @@ public class Dijkstra1 {
 	//방문한 적이 있는지 체크하는 배열
 	public static boolean[] isVisited = new boolean[100001]; 
 	
-	//�최단 거리 테이블 만들기
+	//최단 거리 테이블 만들기
 	public static int[] md = new int[100001];
 	
 	//방문하지 않은 노드 중에서, 가장 최단 거리가 짧은 노드의 번호를 반환

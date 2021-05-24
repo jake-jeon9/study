@@ -16,7 +16,7 @@ public class Xbaek10872 {
 		int index = Integer.parseInt(br.readLine());
 		int result = maker(index);
 		
-		
+		s
 		
 		bw.write(result+"");
 		bw.flush();

@@ -16,8 +16,6 @@ public class baek10870 {
 		
 		int result =f(index); 
 		
-		
-		
 		bw.write(result+"");
 		bw.flush();
 		bw.close();

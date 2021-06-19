@@ -4,21 +4,18 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class baek2447 {
 	static char[][] stars;
 	public static void main(String[] args) throws Exception{
-//		System.out.println("���� ����");
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 			
-		//StringTokenizer st = new StringTokenizer(br.readLine());
-		long beforeTime = System.currentTimeMillis();
 		String item1 = br.readLine();
 		int index = Integer.parseInt(item1);;
 		
-
 		stars = new char[index][index];
 		int round = 1;
 		int count = 1;
@@ -30,7 +27,6 @@ public class baek2447 {
 			}else {
 				break;
 			}
-			
 			
 		}
 		for(int out = 1; out<=index;out++) {	
@@ -59,11 +55,6 @@ public class baek2447 {
 			item+="\n";
 		}
 		bw.write(item);
-		System.out.println("--------------");
-		long afterTime = System.currentTimeMillis(); 
-		long secDiffTime = (afterTime - beforeTime);
-		System.out.println("���� ����(m) : "+secDiffTime);
-		
 		bw.flush();
 		bw.close();
 

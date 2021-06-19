@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class thanksgivingday {
+public class xthanksgivingday {
 	public static void main(String[] args) {
 		answer();
 	}
@@ -40,7 +40,7 @@ public class thanksgivingday {
         	System.out.println(et[i]);
        
         	
-        	//Á¶°Ç°É±â ºÐÀÇ º¯È­ 
+        	//ï¿½ï¿½ï¿½Ç°É±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ 
         		
   
        

@@ -15,9 +15,7 @@ public class Xbaek10872 {
 		
 		int index = Integer.parseInt(br.readLine());
 		int result = maker(index);
-		
-		s
-		
+
 		bw.write(result+"");
 		bw.flush();
 		bw.close();
@@ -32,8 +30,10 @@ public class Xbaek10872 {
 	static int maker(int num) {
 	
 		if(num == 0) {
+			System.out.println("리턴 1");
 			return 1;	
 		}else {		
+			System.out.println("리턴"+num +"리턴 num-1 : "+(num-1));
 			return num  * maker(num-1);
 		}
 				

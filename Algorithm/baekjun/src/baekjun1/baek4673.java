@@ -12,7 +12,7 @@ public static void main(String[] args) {
 			check[n] = true;
 		}
 	}
-s
+
 	StringBuilder sb = new StringBuilder();
 	
 	for(int i = 1; i<10001;i++) {
